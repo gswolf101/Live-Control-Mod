@@ -9,3 +9,5 @@ TIKTOKCONTROL - SITE PARA GITHUB PAGES
    Selecione Deploy from a branch, branch main e pasta / (root).
 
 O site é estático: não precisa de servidor, banco de dados ou build.
+
+Contato do criador: gswolf101@gmail.com
