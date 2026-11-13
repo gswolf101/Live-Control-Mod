@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131c">
+  <meta name="description" content="TikTokControl: transforme o chat da sua live em um controle remoto para Minecraft Java.">
+  <title>TikTokControl — Sua live controla o Minecraft</title>
+  <style>
+    :root {
+      --bg:#0b0e15; --panel:#141a27; --panel2:#1a2232; --text:#f4f6fb;
+      --muted:#aab3c5; --accent:#70e1c1; --accent2:#8c9eff; --line:#2a3448;
+    }
+    * { box-sizing:border-box }
+    html { scroll-behavior:smooth }
+    body {
+      margin:0; background:radial-gradient(ellipse at 75% 0%,#202c46 0,transparent 38%),var(--bg);
+      color:var(--text); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+    a { color:inherit; text-decoration:none }
+    .wrap { width:min(1080px,calc(100% - 40px)); margin:auto }
+    header { padding:22px 0; border-bottom:1px solid #ffffff12 }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:20px }
+    .brand { font-weight:900; letter-spacing:.4px; font-size:1.2rem }
+    .brand span { color:var(--accent) }
+    .navlinks { display:flex; gap:22px; color:var(--muted); font-size:.94rem }
+    .hero { padding:92px 0 76px; display:grid; grid-template-columns:1.2fr .8fr; gap:44px; align-items:center }
+    .eyebrow { color:var(--accent); font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:.78rem }
+    h1 { font-size:clamp(2.6rem,6vw,4.8rem); line-height:1.04; letter-spacing:-2px; margin:14px 0 20px }
+    h1 span { color:var(--accent) }
+    .lead { color:var(--muted); font-size:1.15rem; max-width:620px }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:13px 21px; border-radius:12px; font-weight:800; border:1px solid var(--line); transition:.2s }
+    .btn.primary { background:var(--accent); color:#07130f; border-color:var(--accent) }
+    .btn:hover { transform:translateY(-2px); filter:brightness(1.06) }
+    .visual { background:linear-gradient(145deg,#202b41,#111723); border:1px solid var(--line); border-radius:24px; padding:28px; box-shadow:0 24px 70px #0006 }
+    .screen { background:#0b101a; border:1px solid #35425b; border-radius:16px; padding:18px }
+    .screen-top { display:flex; justify-content:space-between; color:var(--muted); font-size:.8rem; margin-bottom:18px }
+    .chatline { padding:10px 12px; background:#1a2536; border-radius:9px; margin:8px 0; font-size:.9rem }
+    .chatline b { color:var(--accent) }
+    .status { display:inline-block; background:#163b34; color:#8df0d5; padding:5px 9px; border-radius:99px; font-size:.75rem; font-weight:800 }
+    section { padding:68px 0 }
+    .section-head { max-width:680px; margin-bottom:28px }
+    h2 { font-size:clamp(1.8rem,4vw,2.7rem); line-height:1.15; margin:0 0 12px; letter-spacing:-.7px }
+    .muted { color:var(--muted) }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:23px }
+    .icon { font-size:1.7rem; margin-bottom:12px }
+    .card h3 { margin:0 0 8px; font-size:1.13rem }
+    .card p { color:var(--muted); margin:0 }
+    .pricing { display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:800px }
+    .price { font-size:2.5rem; font-weight:900; margin:10px 0 2px }
+    .price small { font-size:.95rem; color:var(--muted); font-weight:500 }
+    ul { padding-left:20px; color:var(--muted) }
+    li { margin:7px 0 }
+    .note { border-left:3px solid var(--accent2); padding:12px 16px; background:#151c2a; border-radius:0 10px 10px 0; color:var(--muted); margin-top:20px }
+    .cta { text-align:center; background:linear-gradient(135deg,#182a36,#1a2034); border:1px solid var(--line); border-radius:24px; padding:48px 24px }
+    footer { border-top:1px solid #ffffff12; padding:28px 0 40px; color:var(--muted); font-size:.88rem }
+    @media(max-width:760px) {
+      .hero { grid-template-columns:1fr; padding:62px 0 48px }
+      .grid { grid-template-columns:1fr }
+      .pricing { grid-template-columns:1fr }
+      .navlinks { display:none }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#">TikTok<span>Control</span></a>
+      <nav class="navlinks">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#precos">Preços</a>
+      </nav>
+      <a class="btn primary" href="#precos">Conhecer o mod</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">Minecraft + interação ao vivo</div>
+        <h1>Sua live. <span>Seu chat.</span> Seu Minecraft.</h1>
+        <p class="lead">Transforme mensagens e interações do público em ações dentro do Minecraft. O TikTokControl conecta sua live ao jogo e faz a audiência participar da experiência.</p>
+        <div class="actions">
+          <a class="btn primary" href="#precos">Ver planos</a>
+          <a class="btn" href="#como-funciona">Como funciona</a>
+        </div>
+        <p class="muted" style="font-size:.86rem;margin-top:18px">Minecraft Java Edition 1.20.1 · Forge 47.4.10</p>
+      </div>
+      <div class="visual" aria-label="Exemplo ilustrativo do chat controlando o Minecraft">
+        <div class="screen">
+          <div class="screen-top"><span>LIVE CHAT</span><span class="status">CONECTADO</span></div>
+          <div class="chatline"><b>@viewer01</b> w w pular</div>
+          <div class="chatline"><b>@viewer02</b> olhar esquerda</div>
+          <div class="chatline"><b>@viewer03</b> minerar</div>
+          <div class="chatline"><b>@viewer04</b> direito</div>
+          <div class="chatline"><b>TikTokControl</b> Comando executado!</div>
+        </div>
+        <p class="muted" style="font-size:.82rem;margin:15px 2px 0">Ilustração demonstrativa da interação entre chat e jogo.</p>
+      </div>
+    </div>
+
+    <section id="como-funciona">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Fácil de entender</div>
+          <h2>O público participa. Você joga.</h2>
+          <p class="muted">O mod lê mensagens da live e converte comandos reconhecidos em entradas de teclado e mouse no Minecraft.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="icon">💬</div><h3>1. Conecte sua live</h3><p>Conecte-se ao TikTok pelo nome de usuário ou à Twitch pelo comando do mod.</p></article>
+          <article class="card"><div class="icon">🎮</div><h3>2. O chat envia comandos</h3><p>Mensagens como <b>w</b>, <b>pular</b>, <b>bater</b> e <b>minerar</b> controlam o personagem.</p></article>
+          <article class="card"><div class="icon">⚡</div><h3>3. A live vira gameplay</h3><p>O público participa em tempo real, criando momentos imprevisíveis para a transmissão.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="recursos">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Feito para lives</div>
+          <h2>Recursos do TikTokControl</h2>
+          <p class="muted">Ferramentas para transformar a participação do público em parte do jogo.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="icon">📱</div><h3>TikTok Live</h3><p>Conexão direta com a live do TikTok, sem depender obrigatoriamente de ferramentas intermediárias.</p></article>
+          <article class="card"><div class="icon">🟣</div><h3>Twitch</h3><p>Leitura do chat da Twitch para executar comandos dentro do Minecraft.</p></article>
+          <article class="card"><div class="icon">⌨️</div><h3>Comandos editáveis</h3><p>Personalize as palavras reconhecidas pelo mod usando o arquivo de comandos.</p></article>
+          <article class="card"><div class="icon">🎁</div><h3>Eventos e presentes</h3><p>Configure ações especiais para interações e presentes compatíveis com a plataforma.</p></article>
+          <article class="card"><div class="icon">🖥️</div><h3>HUD e overlay</h3><p>Acompanhe o estado da conexão e apresente os comandos para quem está assistindo.</p></article>
+          <article class="card"><div class="icon">⏱️</div><h3>Modos de jogo</h3><p>Novos modos, incluindo Parkour e Tente Sobreviver, estão no planejamento de desenvolvimento.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="precos">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Acesso ao produto</div>
+          <h2>Comece a transformar sua live</h2>
+          <p class="muted">Condições comerciais planejadas para o lançamento.</p>
+        </div>
+        <div class="pricing">
+          <article class="card">
+            <h3>Acesso ao TikTokControl</h3>
+            <div class="price">R$ 15 <small>pagamento único</small></div>
+            <ul>
+              <li>Acesso vitalício à versão adquirida.</li>
+              <li>Sem mensalidade para usar essa versão.</li>
+              <li>Compatível com Minecraft Java 1.20.1 e Forge 47.4.10.</li>
+            </ul>
+            <a class="btn primary" href="#contato">Link de compra em breve</a>
+          </article>
+          <article class="card">
+            <h3>Assinatura de atualizações</h3>
+            <div class="price">R$ 5 <small>por mês</small></div>
+            <ul>
+              <li>Acesso às atualizações disponibilizadas durante a assinatura ativa.</li>
+              <li>Ao cancelar, você mantém a última versão recebida.</li>
+              <li>Atualizações anteriores ao retorno não são incluídas automaticamente.</li>
+            </ul>
+            <a class="btn" href="#contato">Assinatura em breve</a>
+          </article>
+        </div>
+        <div class="note">Grandes expansões poderão ser oferecidas separadamente. Os links de compra serão adicionados após a configuração da página de vendas.</div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="wrap">
+        <div class="cta">
+          <div class="eyebrow">TikTokControl</div>
+          <h2>Prepare sua próxima live para o inesperado.</h2>
+          <p class="muted">Em breve: página de compra, tutoriais e novidades do projeto.</p>
+          <a class="btn primary" href="mailto:SEU-EMAIL-AQUI">Fale com o criador</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>TikTokControl</strong><br>
+      Projeto independente. Minecraft é uma marca da Mojang Studios. Este projeto não é afiliado, aprovado ou patrocinado pela Mojang ou pela Microsoft, TikTok ou Twitch.
+      <p>© <span id="year"></span> TikTokControl. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
